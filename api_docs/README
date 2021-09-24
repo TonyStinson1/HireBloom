@@ -1,0 +1,81 @@
+This README provides some information for the mobile app developer to connect into the Hirefly backend.
+
+There are 3 developer environments for the backend:
+ 1) local dev
+ 2) staging server
+ 3) production server
+
+ We recommend the mobile app have some configuration flags to allow the developer to hit either the staging
+ server (in case of some new feature development), or the production server.
+
+ The url for the production backend server is: "https://sourcerer-ai.herokuapp.com/"
+ The url for the staging backend server is: "https://sourcerer-ai-staging.herokuapp.com/"
+  
+ All endpoint resources are hidden behind these urls, followed by v1/resource_name/optional_subresource_name. The full
+ list of resources currently availble is copied at the bottom of this file, though it is not expected that the mobile
+ app will need very many of these.  We will add scripts with usage examples for the resources that seem necessary for
+ various mobile screens to this folder. If documentation about an endpoint resource below is not included but seems
+ necessary, please ask for details.
+
+ Most of these endpoints are authenticated behind a user session token, which is obtained from the backend during the
+ log in procedure. This session token must be passed into headers into the X-Parse-Session-Token field, this will be
+ clear on the API reference examples. We have provided a sample session token in the API reference for one of our
+ accounts, but to obtain your own,
+ - log into the web application at www.hirefly.ai
+ - Click inspect and then Application
+ - Under Storage, go to Local Storage
+ - under www.hirefly.ai you should see the field "session" - you can copy and use this value as your session token
+ until user authentication is built out on the mobile app
+
+
+ Comprehensive Resource List:
+
+ (Users, "/v1/users")
+ (UserPermissions, "/v1/users/permissions")
+ (UserSettings, "/v1/users/settings")
+ (Sessions, "/v1/sessions")
+ (Passwords, "/v1/passwords")
+ (Projects, "/v1/projects")
+ (Candidates, "/v1/candidates")
+ (CandidatesReset, "/v1/candidates/reset")
+ (CandidateSearch, "/v1/candidates/search")
+ (CandidateResume, "/v1/candidates/resume")
+ (ProjectSettings, "/v1/projects/settings")
+ (Subscriptions, "/v1/subscriptions")
+ (ProjectRanking, "/v1/projects/ranking")
+ (ProjectBatchReset, "/v1/projects/batch_reset")
+ (ProjectBatchResetBulk, "/v1/projects/batch_reset/bulk")
+ (IdealCandidate, "/v1/candidates/ideal")
+ (Email, "/v1/email")
+ (BulkEmail, "/v1/email/bulk")
+ (CompanySimilarity, "/v1/company/similarity")
+ (CandidateScrape, "/v1/candidate/scrape")
+ (AddToCandidateStackBulk, "/v1/candidates/stack/bulk/add")
+ (AddToCandidateStack, "/v1/candidates/stack/add")
+ (Followups, "/v1/email/followups")
+ (FindEmail, "/v1/email/find")
+ (ShareApprovedCandidates, "/v1/share")
+ (Interviews, "/v1/interviews")
+ (UserAnalytics, "/v1/user/analytics")
+ (Comments, "/v1/comments")
+ (ValidateEmail, "/v1/users/validate")
+ (Notifications, "/v1/notifications")
+ (ProjectReform, "/v1/projects/reform")
+ (LinkedinSend, "/v1/li/inmail")
+ (LinkedinConnect, "/v1/li/connect")
+ (LinkedinLogin, "/v1/li/login")
+ (AnalyticsCandidateStats, "/v1/analytics/candidate_stats")
+ (AnalyticsOutreachStats, "/v1/analytics/outreach_stats")
+ (AnalyticsGeneralStats, "/v1/analytics/general_stats")
+ (AnalyticsUnopenedTable, "/v1/analytics/unopened_table")
+ (ReplenishEmailCredits, "/v1/email/replenish_all_credits")
+ (AutoSwipe, "/v1/auto_swipe")
+ (ScrapeJobTitles, "/v1/job_titles/scrape")
+ (BouncedEmails, "/v1/email/bounced")
+ (RefreshBouncedPubSub, "/v1/email/bounced_resubscribe")
+ (SendScheduledOutreach, "/v1/email/send_scheduled_outreach")
+ (PrintMessage, "/v1/message/print")
+ (WarmLeads, "/v1/warmleads")
+ (RunUnitTest, "/v1/unit_tests/execute")
+ (AutopilotQueueCheck, "/v1/auto_swipe/queue_check")
+ (WarmleadsTemplate, "/v1/warmleads/template")
